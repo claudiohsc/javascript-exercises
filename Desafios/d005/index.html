@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Converter Medidas</title>
+</head>
+<body>
+    <h1>Conversor de Medidas</h1>
+    <button onclick="converter()">Converter</button>
+    <div id="iniciar_id">Clique no botão acima para iniciar.</div>
+    <script>
+        function converter() {
+            var distancia = prompt('Digite uma distância em metros (m): ')
+            distancia = distancia.toString().replace(",", ".")
+            distancia = Number(distancia)
+            var km = Number(distancia / 1000)
+            var hm = Number(distancia / 100)
+            var dam = Number(distancia / 10)
+            var dm = Number(distancia * 10)
+            var cm = Number(distancia * 100)
+            var mm = Number(distancia * 1000)
+            
+            var metros = document.getElementById('iniciar_id')
+            metros.innerHTML = `A distância de ${distancia.toString().replace(".", ",")} metros corresponde a...`
+            var corpo = document.body
+            var paragrafo = document.createElement('p')
+            paragrafo.textContent = `${km.toString().replace(".", ",")} quilômetros<br>
+            ${hm.toString().replace(".", ",")} hectômetros<br>
+            ${dam.toString().replace(".", ",")} decâmetros<br>
+            ${dm.toString().replace(".", ",")} decímetros<br>
+            ${cm.toString().replace(".", ",")} centímetros<br>
+            ${mm.toString().replace(".", ",")} milímetros<br>`
+            corpo.appendChild(paragrafo)
+        }
+        
+    </script>
+</body>
+</html>

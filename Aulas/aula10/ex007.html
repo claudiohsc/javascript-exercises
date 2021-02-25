@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando números</title>
+    <style>
+        body {
+            font: normal 18pt Arial;
+        }
+        input {
+            font: normal 18pt Arial;
+            width: 100px;
+        }
+        div {
+            margin-top: 20px;
+        }
+        p {
+            margin-bottom: 2px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Somando valores</h1>
+    <input type="number" name="txtn1" id="txtn1"> +
+    <input type="number" name="txtn2" id="txtn2">
+    <input type="button" value="Somar" onclick="somar()">
+    <div id="res">Resultado</div>
+
+
+    <h1>Concatenando nomes</h1>
+    <p>Digite seu primeiro e segundo nome</p> <br>
+
+    <input type="text" name="nome1" id="nome1"> +
+    <input type="text" name="nome2" id="nome2">
+    <input type="button" value="Concatenar" onclick="concatena()">
+    <div id="completo">Nome completo</div>
+    <script>
+        function somar() {
+            var tn1 = document.getElementById('txtn1')
+            var tn2 = document.querySelector('input#txtn2')
+            var res = window.document.querySelector('div#res')
+
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var s = n1 + n2
+            res.innerHTML = `A soma entre ${n1} e ${n2} é igual a <strong>${s}</strong>`
+        }
+        function concatena() {
+            var nome_prim = document.getElementById('nome1')
+            var nome_seg = document.getElementById('nome2')
+            var completo = document.getElementById('completo')
+    
+            var pri_nome = String(nome_prim)
+            var seg_nome = String(nome_seg)
+            var nometodo = `${pri_nome} ${seg_nome}`
+            completo.innerHTML = `Seu nome completo é <strong>${nometodo}</strong>`
+
+        }
+    </script>
+</body>
+</html>
