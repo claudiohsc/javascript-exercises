@@ -1,2 +1,2 @@
 # javascript-exercises
-- All my exercises in JavaScript
+- Exercícios de estudo em JavaScript.
